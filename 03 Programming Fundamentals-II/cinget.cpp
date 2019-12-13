@@ -2,7 +2,8 @@
 using namespace std;
 
 
-int main(){
+
+int main() {
 
 	// Problem - Read a list of characters (sentence)
 	// cin.get()
@@ -12,9 +13,9 @@ int main(){
 	//reads the first char
 	ch = cin.get(); //this method reads any single char including spaces/newlines from the input buffer
 
-	while(ch!='.'){
+	while (ch != '.') {
 		//Print the last character that we have read
-		cout<<ch;
+		cout << ch;
 		// Update my char in the memory (read the next character)
 		//reads the rest of the characters
 		ch = cin.get();
