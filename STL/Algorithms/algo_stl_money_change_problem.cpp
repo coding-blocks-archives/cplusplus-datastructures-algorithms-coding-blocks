@@ -1,32 +1,19 @@
 #include <iostream>
 #include<algorithm>
 using namespace std;
-
+bool compare(int a,int b){
+    return a<=b;
+}
 int main() {
-
-    int a = 10;
-    int b = 20;
-
-    swap(a, b);
-    cout << a << " and " << b << endl;
-
-    cout << max(a, b) << endl;
-    cout << min(a, b) << endl;
-
-    int arr[] = {1, 2, 3, 4, 4, 5};
-    reverse(arr, arr + 4);
-
-    swap(arr[0], arr[1]);
-
-    int n = sizeof(arr) / sizeof(int);
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
+    int coins[]={1,2,5,10,20,50,100,200,500,2000};
+    int n=sizeof(coins)/sizeof(int);
+    int money=168;
+    while(money>0){
+        int lb= lower_bound(coins,coins+n,money,compare)-coins-1;
+        int m=coins[lb];
+        cout<<m<<", ";
+        money=money-m;
     }
-    next_permutation(arr, arr + n);
-    cout << endl;
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
-    }
-
     return 0;
 }
+
